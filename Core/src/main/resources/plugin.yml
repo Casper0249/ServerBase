@@ -1,0 +1,7 @@
+name: ServerBase
+version: '${project.version}'
+main: nl.casperlambers.serverbase.core.ServerBase
+api-version: 1.19
+authors: [ Casper0249 ]
+description: Core plugin
+website: serverbase.casperlambers.nl
