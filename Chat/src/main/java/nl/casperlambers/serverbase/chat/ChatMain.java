@@ -1,8 +1,9 @@
-package nl.casperlambers.serverbase.sBChat;
+package nl.casperlambers.serverbase.chat;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class SBChat extends JavaPlugin {
+public final class ChatMain extends JavaPlugin {
+    private final Chat chat = new Chat();
 
     @Override
     public void onEnable() {
@@ -13,5 +14,9 @@ public final class SBChat extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public Chat getChat() {
+        return chat;
     }
 }
