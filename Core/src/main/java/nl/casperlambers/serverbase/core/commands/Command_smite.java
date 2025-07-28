@@ -1,7 +1,8 @@
 package nl.casperlambers.serverbase.core.commands;
 
-import jdk.tools.jlink.internal.Platform;
+import nl.casperlambers.serverbase.core.ServerBase;
 import nl.casperlambers.serverbase.core.api.ServerBaseAPI;
+import nl.casperlambers.serverbase.core.api.ServerBaseCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -10,8 +11,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Command_smite implements CommandExecutor {
-    private final ServerBaseAPI api = new ServerBaseAPI();
+public class Command_smite implements ServerBaseCommand {
+    private final ServerBaseAPI api = ServerBase.getAPI();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(label.equalsIgnoreCase("smite")) {
@@ -38,5 +40,10 @@ public class Command_smite implements CommandExecutor {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String getCommandName() {
+        return "smite";
     }
 }

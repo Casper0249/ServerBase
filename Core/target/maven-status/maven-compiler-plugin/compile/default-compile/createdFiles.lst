@@ -1,4 +1,7 @@
-nl/casperlambers/serverbase/core/ServerBase.class
-nl/casperlambers/serverbase/core/commands/Command_serverbase.class
-nl/casperlambers/serverbase/core/commands/Command_smite.class
-nl/casperlambers/serverbase/core/api/ServerBaseAPI.class
+nl\casperlambers\serverbase\core\api\ServerBaseAPI.class
+nl\casperlambers\serverbase\core\api\ServerBaseCommand.class
+nl\casperlambers\serverbase\core\commands\Command_serverbase.class
+nl\casperlambers\serverbase\core\commands\Command_smite.class
+nl\casperlambers\serverbase\core\api\ServerBaseColor.class
+nl\casperlambers\serverbase\core\ServerBase.class
+nl\casperlambers\serverbase\core\api\ServerBasePlugin.class

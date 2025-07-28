@@ -14,6 +14,8 @@ public class ServerBaseAPI {
 
     public final String versionString = "1.0-SNAPSHOT";
 
+    protected ChatColor[] colorSet;
+
     public ChatColor colorMain = ChatColor.RESET;
     public ChatColor colorSecondary = ChatColor.AQUA;
     public ChatColor colorErrorMain = ChatColor.RED;
