@@ -21,6 +21,7 @@ public class Command_smite implements ServerBaseCommand {
                 for (String arg : args) {
                     if (Bukkit.getPlayer(arg) != null) {
                         Player player = Bukkit.getPlayer(arg);
+                        assert player != null;
                         player.getWorld().strikeLightning(player.getLocation());
                         sender.sendMessage("Player " + api.colorSecondary + arg + api.colorMain + " has been smitten!");
                         continue;
@@ -28,8 +29,7 @@ public class Command_smite implements ServerBaseCommand {
                     sender.sendMessage("Player " + api.colorSecondary + arg + api.colorMain + " is not online");
                 }
             } else {
-                if (sender instanceof Player) {
-                    Player player = (Player) sender;
+                if (sender instanceof Player player) {
                     Location loc = player.getCompassTarget();
                     player.getWorld().strikeLightning(loc);
                     sender.sendMessage("Block " + api.colorSecondary + loc.getX() + " " + loc.getY() + " " + loc.getZ() + api.colorMain + " has been smitten!");

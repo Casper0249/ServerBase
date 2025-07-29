@@ -2,7 +2,8 @@ package nl.casperlambers.serverbase.chat;
 
 public enum ChatChannel {
     GENERAL("General"),
-    LOCAL("Local");
+    LOCAL("Local"),
+    GUILD("Guild");
 
     private final String channelName;
 

@@ -17,7 +17,7 @@ public class Command_serverbase implements ServerBaseCommand {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (command.getLabel().equalsIgnoreCase(getCommandName())) {
-            commandSender.sendMessage(api.colorMain + "ServerBase version " + api.colorSecondary + api.versionString);
+            commandSender.sendMessage(api.colorMain + "ServerBase version " + api.colorSecondary + api.getVersionString());
             return true;
         }
         return false;
