@@ -1,5 +1,6 @@
 package nl.casperlambers.serverbase.chat.commands;
 
+import nl.casperlambers.serverbase.chat.types.Guild;
 import nl.casperlambers.serverbase.core.api.ServerBaseCommand;
 import org.bukkit.Color;
 import org.bukkit.command.Command;
@@ -13,6 +14,8 @@ public class Command_guild implements ServerBaseCommand {
     }
 
     private void create(String[] args) {
+        if (Guild.guildExists(args[1])) {
+        }
 
     }
 

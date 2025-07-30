@@ -43,6 +43,7 @@ public final class ServerBase extends JavaPlugin {
             getLogger().log(Level.INFO, "ServerBase data folder not present, creating it now...");
         }
 
+        api.init(this);
         api.registerCommands(this, commandList);
         api.requireFiles(fileNameList);
 

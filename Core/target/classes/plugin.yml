@@ -5,3 +5,12 @@ api-version: 1.19
 authors: [ Casper0249 ]
 description: Core plugin
 website: serverbase.casperlambers.nl
+commands:
+  smite:
+    description: Strikes lightning at a [players] location
+    usage: /smite [Player]
+    permission: serverbase.core.smite
+  serverbase:
+    description: Info command
+    usage: /serverbase
+    permission: serverbase.core.serverbase

@@ -1,4 +1,4 @@
-package nl.casperlambers.serverbase.chat;
+package nl.casperlambers.serverbase.chat.types;
 
 public enum ChatChannel {
     GENERAL("General"),

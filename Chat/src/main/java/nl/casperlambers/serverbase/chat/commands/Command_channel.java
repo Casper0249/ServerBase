@@ -1,6 +1,6 @@
 package nl.casperlambers.serverbase.chat.commands;
 
-import nl.casperlambers.serverbase.chat.ChatChannel;
+import nl.casperlambers.serverbase.chat.types.ChatChannel;
 import nl.casperlambers.serverbase.chat.ChatMain;
 import nl.casperlambers.serverbase.chat.ServerChat;
 import nl.casperlambers.serverbase.core.api.ServerBaseCommand;
@@ -9,8 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-
-import java.nio.channels.Channel;
 
 public class Command_channel implements ServerBaseCommand {
     private final ServerChat serverChat = ChatMain.getPlugin(ChatMain.class).getChat();

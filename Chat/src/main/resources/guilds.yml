@@ -1,0 +1,36 @@
+entropia:
+  display-name: Kingdom Entropia
+  tag: Entropia
+  join-policy: 1
+  members:
+    leader: a6420ca6-7cee-44f1-8e3b-f825da6758ca
+    co-leaders:
+      - s
+      - as
+    elders:
+      - aa
+      - sdf
+      - ss
+      - s
+    default:
+      - saas
+      - lk
+      - jdhd
+jenava:
+  display-name: Hertogdom Jenava
+  tag: jenava
+  join-policy: 1
+  members:
+    leader: a6420ca6-7cee-44f1-8e3b-f825da6758ca
+    co-leaders:
+      - s
+      - as
+    elders:
+      - aa
+      - sdf
+      - ss
+      - s
+    default:
+      - saas
+      - lk
+      - jdhd

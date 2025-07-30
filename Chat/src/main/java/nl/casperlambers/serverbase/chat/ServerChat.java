@@ -1,11 +1,14 @@
 package nl.casperlambers.serverbase.chat;
 
+import nl.casperlambers.serverbase.chat.types.ChatChannel;
+import nl.casperlambers.serverbase.chat.types.Guild;
+import nl.casperlambers.serverbase.chat.types.SocialPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 
 public class ServerChat {
-    private final Map<UUID, ChatChannel> playerChannelMap = new HashMap<>();
+    // Chat channels
     private final Map<ChatChannel, ArrayList<Player>> channelMuteMap = new HashMap<>();
 
     public ServerChat() { // Constructor
@@ -14,11 +17,21 @@ public class ServerChat {
         channelMuteMap.put(ChatChannel.GUILD, new ArrayList<>());
     }
 
-    public Map<UUID, ChatChannel> getPlayerChannelMap() {
-        return playerChannelMap;
+    public Map<ChatChannel, ArrayList<Player>> getChannelMuteMap()  {
+        return channelMuteMap;
     }
 
-    public Map<ChatChannel, ArrayList<Player>> getChannelMuteMap() {
-        return channelMuteMap;
+    // Guilds
+    private final HashMap<String, Guild> guildHashMap = new HashMap<>();
+
+    public HashMap<String, Guild> getGuildHashMap() {
+        return guildHashMap;
+    }
+
+    // Social players
+    private final HashMap<Player, SocialPlayer> socialPlayerHashMap = new HashMap<>();
+
+    public HashMap<Player, SocialPlayer> getSocialPlayerHashMap() {
+        return socialPlayerHashMap;
     }
 }

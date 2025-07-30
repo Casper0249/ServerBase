@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.logging.Level;
 
 public class ServerBaseAPI {
-    private final ServerBase plugin = ServerBase.getPlugin(ServerBase.class);
+    private ServerBase plugin;
 
     private final String versionString = "1.0-SNAPSHOT";
 
@@ -47,13 +47,26 @@ public class ServerBaseAPI {
         return new File(plugin.getDataFolder(), name);
     }
 
+    /**
+     * Gives the current ServerBase version
+     * @return Current version in string format
+     */
+    public String getVersionString() {
+        return versionString;
+    }
+
+    /**
+     * Code snippet to easily register one or multiple commands
+     * @param javaPlugin Plugin to which the commands are to be registered
+     * @param commands one, multiple, or an array of commands
+     */
     public void registerCommands(JavaPlugin javaPlugin, ServerBaseCommand... commands) {
         for (ServerBaseCommand serverBaseCommand : commands) {
             Objects.requireNonNull(javaPlugin.getCommand(serverBaseCommand.getCommandName())).setExecutor(serverBaseCommand);
         }
     }
 
-    public String getVersionString() {
-        return versionString;
+    public void init(ServerBase serverBase) {
+        plugin = serverBase;
     }
 }

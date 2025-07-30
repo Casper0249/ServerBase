@@ -8,6 +8,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class LeaveEvent implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent event) {
-        ChatMain.getPlugin(ChatMain.class).getChat().getPlayerChannelMap().remove(event.getPlayer().getUniqueId());
+        ChatMain.getPlugin(ChatMain.class).getChat().getSocialPlayerHashMap().remove(event.getPlayer()); // Remove player from social player hashmap
     }
 }

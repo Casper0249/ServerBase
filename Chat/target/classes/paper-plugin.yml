@@ -1,0 +1,13 @@
+name: SbChat
+version: '1.0-SNAPSHOT'
+main: nl.casperlambers.serverbase.chat.ChatMain
+api-version: '1.21'
+authors: [Casper0249]
+description: Chat module
+website: casperlambers.nl
+commands:
+  message:
+    description: Privately sends a message to a player
+    usage: /message <player> <message>
+    aliases: [msg, whisper]
+    permission: serverbase.chat.message
