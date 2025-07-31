@@ -8,8 +8,9 @@ import org.bukkit.entity.Player;
 import java.util.*;
 
 public class ServerChat {
-    // Chat channels
-    private final Map<ChatChannel, ArrayList<Player>> channelMuteMap = new HashMap<>();
+    private final HashMap<ChatChannel, ArrayList<Player>> channelMuteMap = new HashMap<>();
+    private final HashMap<String, Guild> guildHashMap = new HashMap<>();
+    private final HashMap<Player, SocialPlayer> socialPlayerHashMap = new HashMap<>();
 
     public ServerChat() { // Constructor
         channelMuteMap.put(ChatChannel.GENERAL, new ArrayList<>());
@@ -21,15 +22,9 @@ public class ServerChat {
         return channelMuteMap;
     }
 
-    // Guilds
-    private final HashMap<String, Guild> guildHashMap = new HashMap<>();
-
     public HashMap<String, Guild> getGuildHashMap() {
         return guildHashMap;
     }
-
-    // Social players
-    private final HashMap<Player, SocialPlayer> socialPlayerHashMap = new HashMap<>();
 
     public HashMap<Player, SocialPlayer> getSocialPlayerHashMap() {
         return socialPlayerHashMap;

@@ -6,6 +6,7 @@ public enum ChatChannel {
     GUILD("Guild");
 
     private final String channelName;
+    private static final int localDistanceMax = 200;
 
     ChatChannel(String channelName) {
         this.channelName = channelName;
@@ -13,5 +14,9 @@ public enum ChatChannel {
 
     public String getChannelName() {
         return channelName;
+    }
+
+    public static int getLocalDistanceMax() {
+        return localDistanceMax;
     }
 }

@@ -9,16 +9,16 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 
 public class SocialPlayer {
-    private Guild guild;
+    private String guildName;
     private ChatChannel currentChannel;
     private ArrayList<String> mail;
 
     public SocialPlayer() {
-        //todo
+        //todo get mail and guild
     }
 
     public Guild getGuild() {
-        return guild;
+        return ChatMain.getPlugin(ChatMain.class).getChat().getGuildHashMap().get(guildName);
     }
 
     public ChatChannel getCurrentChannel() {

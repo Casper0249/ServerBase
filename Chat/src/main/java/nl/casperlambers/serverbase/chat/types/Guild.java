@@ -14,7 +14,7 @@ public class Guild {
     private String name;
     private String displayName;
     private String tag;
-    private Player leader;
+    private UUID leaderUUID;
     private GuildJoinPolicy joinPolicy;
     private HashMap<GuildRank, ArrayList<Player>> members;
 
@@ -34,16 +34,27 @@ public class Guild {
         return tag;
     }
 
-    public Player getLeader() {
-        return leader;
+    public UUID getLeader() {
+        return leaderUUID;
     }
 
     public GuildJoinPolicy getJoinPolicy() {
         return joinPolicy;
     }
 
-    public HashMap<GuildRank, ArrayList<Player>> getMembers() {
+    public HashMap<GuildRank, ArrayList<Player>> getMembersByRank() {
         return members;
+    }
+
+    public ArrayList<Player> getMembersAll() {
+        ArrayList<Player> arrayList = new ArrayList<>();
+
+        arrayList.addAll(members.get(GuildRank.LEADER));
+        arrayList.addAll(members.get(GuildRank.COLEADER));
+        arrayList.addAll(members.get(GuildRank.ELDER));
+        arrayList.addAll(members.get(GuildRank.DEFAULT));
+
+        return arrayList;
     }
 
     public static boolean guildExists(String guildName) {

@@ -13,10 +13,10 @@ public class Command_guild implements ServerBaseCommand {
         return "guild";
     }
 
-    private void create(String[] args) {
+    private void create(String[] args, CommandSender commandSender) {
         if (Guild.guildExists(args[1])) {
         }
-
+        Guild.createGuild(args[1], );
     }
 
     @Override
