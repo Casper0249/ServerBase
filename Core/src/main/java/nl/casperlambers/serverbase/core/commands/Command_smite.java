@@ -1,6 +1,7 @@
 package nl.casperlambers.serverbase.core.commands;
 
 import nl.casperlambers.serverbase.core.ServerBase;
+import nl.casperlambers.serverbase.core.api.ErrorMessages;
 import nl.casperlambers.serverbase.core.api.ServerBaseAPI;
 import nl.casperlambers.serverbase.core.api.ServerBaseCommand;
 import org.bukkit.Bukkit;

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 public final class ServerBase extends JavaPlugin {
-    private static final ServerBaseAPI api = new ServerBaseAPI();
+    private static ServerBaseAPI api;
     private final File secondDataFolder = new File(getDataFolder(), "data");
 
     private final ServerBaseCommand[] commandList = { // Add command to this list to register it
@@ -36,6 +36,8 @@ public final class ServerBase extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        api = new ServerBaseAPI(this);
+
         if (getDataFolder().mkdir()) { // Creates plugin folder if it doesn't exist yet
             getLogger().log(Level.INFO, "SeverBase plugin folder not present, creating it now...");
         }
@@ -43,8 +45,7 @@ public final class ServerBase extends JavaPlugin {
             getLogger().log(Level.INFO, "ServerBase data folder not present, creating it now...");
         }
 
-        api.init(this);
-        api.registerCommands(this, commandList);
+        ServerBaseAPI.registerCommands(this, commandList);
         api.requireFiles(fileNameList);
 
     }

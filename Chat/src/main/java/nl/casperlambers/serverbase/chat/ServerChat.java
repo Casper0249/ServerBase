@@ -6,27 +6,29 @@ import nl.casperlambers.serverbase.chat.types.SocialPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ServerChat {
-    private final HashMap<ChatChannel, ArrayList<Player>> channelMuteMap = new HashMap<>();
-    private final HashMap<String, Guild> guildHashMap = new HashMap<>();
-    private final HashMap<Player, SocialPlayer> socialPlayerHashMap = new HashMap<>();
+    private final ConcurrentHashMap<ChatChannel, CopyOnWriteArrayList<Player>> channelMuteMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, Guild> guildHashMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<Player, SocialPlayer> socialPlayerHashMap = new ConcurrentHashMap<>();
 
     public ServerChat() { // Constructor
-        channelMuteMap.put(ChatChannel.GENERAL, new ArrayList<>());
-        channelMuteMap.put(ChatChannel.LOCAL, new ArrayList<>());
-        channelMuteMap.put(ChatChannel.GUILD, new ArrayList<>());
+        channelMuteMap.put(ChatChannel.GENERAL, new CopyOnWriteArrayList<>());
+        channelMuteMap.put(ChatChannel.LOCAL, new CopyOnWriteArrayList<>());
+        channelMuteMap.put(ChatChannel.GUILD, new CopyOnWriteArrayList<>());
     }
 
-    public Map<ChatChannel, ArrayList<Player>> getChannelMuteMap()  {
+    public ConcurrentHashMap<ChatChannel, CopyOnWriteArrayList<Player>> getChannelMuteMap()  {
         return channelMuteMap;
     }
 
-    public HashMap<String, Guild> getGuildHashMap() {
+    public ConcurrentHashMap<String, Guild> getGuildHashMap() {
         return guildHashMap;
     }
 
-    public HashMap<Player, SocialPlayer> getSocialPlayerHashMap() {
+    public ConcurrentHashMap<Player, SocialPlayer> getSocialPlayerHashMap() {
         return socialPlayerHashMap;
     }
 }

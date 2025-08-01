@@ -13,14 +13,13 @@ import java.util.Objects;
 import java.util.logging.Level;
 
 public class ServerBaseAPI {
-    private ServerBase plugin;
+    private final ServerBase plugin;
 
-    private final String versionString = "1.0-SNAPSHOT";
+    private static final String versionString = "1.0-SNAPSHOT";
 
-    public ChatColor colorMain = ChatColor.RESET;
-    public ChatColor colorSecondary = ChatColor.AQUA;
-    public ChatColor colorErrorMain = ChatColor.RED;
-    public ChatColor colorErrorSecondary = ChatColor.DARK_RED;
+    public ServerBaseAPI(ServerBase plugin) {
+        this.plugin = plugin;
+    }
 
     /**
      * Checks if multiple files exist and creates them if they don't
@@ -51,7 +50,7 @@ public class ServerBaseAPI {
      * Gives the current ServerBase version
      * @return Current version in string format
      */
-    public String getVersionString() {
+    public static String getVersionString() {
         return versionString;
     }
 
@@ -60,13 +59,9 @@ public class ServerBaseAPI {
      * @param javaPlugin Plugin to which the commands are to be registered
      * @param commands one, multiple, or an array of commands
      */
-    public void registerCommands(JavaPlugin javaPlugin, ServerBaseCommand... commands) {
+    public static void registerCommands(JavaPlugin javaPlugin, ServerBaseCommand... commands) {
         for (ServerBaseCommand serverBaseCommand : commands) {
             Objects.requireNonNull(javaPlugin.getCommand(serverBaseCommand.getCommandName())).setExecutor(serverBaseCommand);
         }
-    }
-
-    public void init(ServerBase serverBase) {
-        plugin = serverBase;
     }
 }

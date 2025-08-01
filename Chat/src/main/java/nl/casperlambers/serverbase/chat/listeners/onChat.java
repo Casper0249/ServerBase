@@ -4,6 +4,7 @@ import nl.casperlambers.serverbase.chat.ServerChat;
 import nl.casperlambers.serverbase.chat.types.ChatChannel;
 import nl.casperlambers.serverbase.chat.ChatMain;
 import nl.casperlambers.serverbase.chat.types.SocialPlayer;
+import nl.casperlambers.serverbase.core.api.ErrorMessages;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
@@ -26,6 +27,7 @@ public class onChat implements Listener {
         // Set chat format
         final String format = Color.AQUA + player.getName() + Color.GRAY + " > " + Color.AQUA + chatChannel.getChannelName() + Color.GRAY + ": \"" + Color.WHITE + event.getMessage() + Color.GRAY + "\"";
         event.setFormat(format);
+        player.sendMessage(ErrorMessages.playerNotOnline(player));
 
         // Handle guild and local chat
         if (chatChannel == ChatChannel.GUILD) {

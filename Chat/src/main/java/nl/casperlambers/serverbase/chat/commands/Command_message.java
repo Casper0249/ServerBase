@@ -1,5 +1,7 @@
 package nl.casperlambers.serverbase.chat.commands;
 
+import nl.casperlambers.serverbase.core.api.ErrorMessage;
+import nl.casperlambers.serverbase.core.api.ErrorMessages;
 import nl.casperlambers.serverbase.core.api.ServerBaseCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -27,6 +29,7 @@ public class Command_message implements ServerBaseCommand {
                 final String message =  String.join(" ", Arrays.copyOfRange(strings, 1, strings.length));
                 assert recipient != null;
                 recipient.sendMessage(message);
+                commandSender.sendMessage(ErrorMessage.PLAYER_OFFLINE.formatSuper(recipient.getName()));
             }
         }
         return false;

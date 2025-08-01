@@ -68,5 +68,11 @@
       <version>1.21.4-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
+      <dependency>
+          <groupId>nl.casperlambers.serverbase</groupId>
+          <artifactId>Core</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
 </project>

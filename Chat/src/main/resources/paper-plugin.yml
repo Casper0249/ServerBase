@@ -5,6 +5,10 @@ api-version: '1.21'
 authors: [Casper0249]
 description: Chat module
 website: casperlambers.nl
+dependencies:
+  ServerBase:
+    load: BEFORE
+    required: true
 commands:
   message:
     description: Privately sends a message to a player
