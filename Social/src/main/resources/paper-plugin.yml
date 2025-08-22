@@ -1,0 +1,8 @@
+name: SBSocial
+version: '1.0-SNAPSHOT'
+main: nl.casperlambers.serverbase.social.SocialMain
+api-version: '1.21'
+load: STARTUP
+authors: [Casper0249]
+description: Social module
+website: casperlambers.nl

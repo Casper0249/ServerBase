@@ -1,7 +1,12 @@
-# This is the config file for the colors ServerBase uses
-# Available colors: todo
+# ServerBase color config
+# Options:
+# DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE,
+# BLACK, GOLD, GRAY, BLUE, GREEN, AQUA, RED, YELLOW, WHITE,
+# LIGHT_PURPLE.
 
 info-main: WHITE
-info-secondary: AQUA
+info-alt: AQUA
 error-main: RED
-error-secondary: DARK_RED
+error-alt: DARK_RED
+success-main: GREEN
+success-alt: DARK GREEN

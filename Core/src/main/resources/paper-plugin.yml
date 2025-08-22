@@ -1,0 +1,19 @@
+name: ServerBase
+version: '1.0-SNAPSHOT'
+main: nl.casperlambers.serverbase.core.CoreMain
+api-version: '1.21'
+load: STARTUP
+authors: [Casper0249]
+description: Core module
+website: casperlambers.nl
+bootstrapper: nl.casperlambers.serverbase.core.Bootstrap
+permissions:
+  serverbase.core.maincommand:
+    description: Allows /serverbase
+    default: op
+  serverbase.core.smite:
+    description: Allows /smite
+    default: op
+  serverbase.core.heal:
+    description: Allows /heal
+    default: op

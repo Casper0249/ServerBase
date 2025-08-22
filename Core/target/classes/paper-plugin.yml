@@ -1,0 +1,22 @@
+name: ServerBase
+version: '1.0-SNAPSHOT'
+main: nl.casperlambers.serverbase.core.CoreMain
+api-version: '1.21'
+load: STARTUP
+authors: [Casper0249]
+description: Core module
+website: casperlambers.nl
+bootstrapper: nl.casperlambers.serverbase.core.Bootstrap
+commands:
+  smite:
+    description: Strikes lightning at a [players] location
+    usage: /smite [Player]
+    permission: serverbase.core.smite
+  serverbase:
+    description: Info command
+    usage: /serverbase
+    permission: serverbase.core.serverbase
+  heal:
+    description: Heals player(s) or self
+    usage: /heal [value ? player] [extra players...]
+
